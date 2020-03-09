@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="6" failures="0" time="1.94">
+  <testsuite name="CommonService" errors="0" failures="0" skipped="0" timestamp="2020-03-09T19:29:33" time="1.079" tests="1">
+    <testcase classname="CommonService should be created" name="CommonService should be created" time="0.029">
+    </testcase>
+  </testsuite>
+  <testsuite name="CoreService" errors="0" failures="0" skipped="0" timestamp="2020-03-09T19:29:33" time="1.088" tests="1">
+    <testcase classname="CoreService should be created" name="CoreService should be created" time="0.029">
+    </testcase>
+  </testsuite>
+  <testsuite name="CommonComponent" errors="0" failures="0" skipped="0" timestamp="2020-03-09T19:29:33" time="1.115" tests="1">
+    <testcase classname="CommonComponent should create" name="CommonComponent should create" time="0.075">
+    </testcase>
+  </testsuite>
+  <testsuite name="AppComponent" errors="0" failures="0" skipped="0" timestamp="2020-03-09T19:29:32" time="1.171" tests="2">
+    <testcase classname="AppComponent should create the app" name="AppComponent should create the app" time="0.08">
+    </testcase>
+    <testcase classname="AppComponent should have as title &apos;kan-ban&apos;" name="AppComponent should have as title &apos;kan-ban&apos;" time="0.021">
+    </testcase>
+  </testsuite>
+  <testsuite name="CoreComponent" errors="0" failures="0" skipped="0" timestamp="2020-03-09T19:29:33" time="1.135" tests="1">
+    <testcase classname="CoreComponent should create" name="CoreComponent should create" time="0.074">
+    </testcase>
+  </testsuite>
+</testsuites>
