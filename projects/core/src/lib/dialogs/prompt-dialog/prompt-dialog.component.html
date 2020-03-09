@@ -1,0 +1,36 @@
+<kb-dialog>
+  <kb-dialog-title *ngIf="title">
+    {{ title }}
+  </kb-dialog-title>
+  <kb-dialog-content>
+    <span class="kb-dialog-message">{{ message }}</span>
+    <form #form="ngForm" novalidate>
+      <div class="kb-dialog-input-wrapper">
+        <mat-form-field class="kb-dialog-input">
+          <input
+            matInput
+            #input
+            (focus)="handleInputFocus()"
+            (keydown.enter)="$event.preventDefault(); form.valid && accept()"
+            [(ngModel)]="value"
+            name="value"
+            required
+          />
+        </mat-form-field>
+      </div>
+    </form>
+  </kb-dialog-content>
+  <kb-dialog-actions>
+    <button mat-button #closeBtn (keydown.arrowright)="acceptBtn.focus()" (click)="cancel()">{{ cancelButton }}</button>
+    <button
+      mat-button
+      color="accent"
+      #acceptBtn
+      (keydown.arrowleft)="closeBtn.focus()"
+      [disabled]="!form.valid"
+      (click)="accept()"
+    >
+      {{ acceptButton }}
+    </button>
+  </kb-dialog-actions>
+</kb-dialog>

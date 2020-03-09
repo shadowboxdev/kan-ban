@@ -1,0 +1,11 @@
+<ng-content select="kb-sidesheet-header"></ng-content>
+<ng-template [ngIf]="headerExists">
+  <mat-divider></mat-divider>
+</ng-template>
+<div class="kb-sidesheet-content-wrapper">
+  <ng-content></ng-content>
+</div>
+<ng-template [ngIf]="actionsExist">
+  <mat-divider></mat-divider>
+</ng-template>
+<ng-content select="kb-sidesheet-actions"></ng-content>

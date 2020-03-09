@@ -1,0 +1,12 @@
+<div class="kb-dialog-wrapper">
+  <h3 class="kb-dialog-title" *ngIf="dialogTitle.length > 0">
+    <ng-content select="kb-dialog-title"></ng-content>
+  </h3>
+  <div class="kb-dialog-content" *ngIf="dialogContent.length > 0">
+    <ng-content select="kb-dialog-content"></ng-content>
+  </div>
+  <div class="kb-dialog-actions" *ngIf="dialogActions.length > 0">
+    <span class="kb-dialog-spacer"></span>
+    <ng-content select="kb-dialog-actions"></ng-content>
+  </div>
+</div>

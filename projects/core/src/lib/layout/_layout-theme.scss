@@ -1,0 +1,116 @@
+@import 'common/elevation';
+@import 'common/styles/theme-functions';
+@import 'common/typography-functions';
+
+@mixin kb-layout-typography($config) {
+  kb-navigation-drawer {
+    .kb-navigation-drawer-title {
+      font: {
+        family: kb-font-family($config);
+        size: kb-font-size($config, subheading-2);
+      }
+    }
+    .kb-navigation-drawer-name {
+      font: {
+        family: kb-font-family($config);
+        size: kb-font-size($config, body-1);
+        weight: 500;
+      }
+
+      line-height: kb-line-height($config, body-1);
+    }
+    .kb-navigation-drawer-menu-toggle {
+      font: {
+        family: kb-font-family($config);
+        size: kb-font-size($config, body-2);
+        weight: 400;
+      }
+
+      line-height: kb-line-height($config, body-2);
+    }
+  }
+}
+
+@mixin kb-layout-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  .mat-drawer-container {
+    background-color: mat-color($background, status-bar);
+  }
+
+  [mat-icon-button].kb-layout-menu-button {
+    margin-left: 0;
+    ::ng-deep [dir='rtl'] & {
+      margin-right: 0;
+      margin-left: 6px;
+    }
+  }
+
+  kb-layout-nav,
+  kb-layout-nav-list,
+  kb-layout-manage-list,
+  kb-layout-card-over,
+  kb-navigation-drawer,
+  kb-layout {
+    mat-toolbar {
+      @include mat-elevation(1);
+
+      z-index: 1;
+    }
+  }
+
+  body[dense] kb-layout-nav,
+  body[dense] kb-layout-nav-list,
+  body[dense] kb-layout-card-over,
+  kb-layout-nav[dense],
+  kb-layout-nav-list[dense],
+  kb-layout-card-over[dense] {
+    mat-toolbar.kb-layout-toolbar {
+      &.mat-toolbar-row,
+      &.mat-toolbar-single-row {
+        height: 48px;
+      }
+    }
+  }
+  body[dense] kb-layout-card-over,
+  kb-layout-card-over[dense] {
+    .kb-layout-card-over-wrapper {
+      margin: -48px;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  .mat-drawer-side.kb-layout-sidenav {
+    @include mat-elevation(2);
+  }
+  .kb-layout-footer {
+    background: mat-color($background, app-bar);
+    color: mat-color($foreground, text);
+    @include mat-elevation(2);
+    &.mat-primary {
+      background: mat-color($primary);
+      &,
+      mat-icon {
+        color: mat-color($primary, default-contrast);
+      }
+    }
+    &.mat-accent {
+      background: mat-color($accent);
+      &,
+      mat-icon {
+        color: mat-color($accent, default-contrast);
+      }
+    }
+    &.mat-warn {
+      background: mat-color($warn);
+      &,
+      mat-icon {
+        color: mat-color($warn, default-contrast);
+      }
+    }
+  }
+}

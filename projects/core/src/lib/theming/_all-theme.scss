@@ -1,0 +1,15 @@
+@import '../layout/layout-theme';
+@import '../dialogs/dialog-theme';
+@import '../notifications/notification-count-theme';
+// import the covalent mixins
+@import 'common/styles';
+@import '../typography/all-typography';
+
+// Create a theme.
+@mixin covalent-theme($theme, $config: null) {
+  @include kb-typography($config);
+  @include kb-common-theme($theme);
+  @include kb-layout-theme($theme);
+  @include kb-dialog-theme($theme);
+  @include kb-notification-count-theme($theme);
+}

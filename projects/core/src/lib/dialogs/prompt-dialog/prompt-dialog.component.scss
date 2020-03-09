@@ -1,0 +1,15 @@
+.kb-dialog-input-wrapper {
+  // layout row
+  flex-direction: row;
+  box-sizing: border-box;
+  display: flex;
+  .kb-dialog-input {
+    // flex
+    flex: 1;
+    box-sizing: border-box;
+  }
+}
+
+.kb-dialog-message {
+  word-break: break-word;
+}

@@ -1,0 +1,13 @@
+{
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts",
+      "umdModuleIds": {
+        "@common/animations": "common.animations"
+      },
+      "styleIncludePaths": [
+        "../../../../../styles"
+      ]
+    }
+  }
+}

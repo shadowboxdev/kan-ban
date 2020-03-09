@@ -1,0 +1,15 @@
+<mat-sidenav-container fullscreen [autosize]="containerAutosize">
+  <mat-sidenav
+    #sidenav
+    class="kb-layout-sidenav"
+    [mode]="mode"
+    [opened]="opened"
+    [style.max-width]="sidenavWidth"
+    [style.min-width]="sidenavWidth"
+    [disableClose]="disableClose"
+  >
+    <ng-content select="kb-navigation-drawer"></ng-content>
+    <ng-content select="[kb-sidenav-content]"></ng-content>
+  </mat-sidenav>
+  <ng-content></ng-content>
+</mat-sidenav-container>

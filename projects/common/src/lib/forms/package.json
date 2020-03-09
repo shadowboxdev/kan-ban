@@ -1,0 +1,8 @@
+{
+  "name": "@common/forms",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  }
+}

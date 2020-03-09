@@ -1,0 +1,18 @@
+<mat-toolbar class="kb-layout-toolbar" [color]="color"></mat-toolbar>
+<div class="kb-layout-card-over-wrapper">
+  <div
+    class="kb-layout-card-over"
+    [style.max-width.%]="cardWidth"
+    [style.flex]="'1 1 ' + cardWidth + '%'"
+    [style.-ms-flex]="'1 1 ' + cardWidth + '%'"
+    [style.-webkit-box-flex]="1"
+  >
+    <mat-card>
+      <mat-card-title *ngIf="cardTitle">{{ cardTitle }}</mat-card-title>
+      <mat-card-subtitle *ngIf="cardSubtitle">{{ cardSubtitle }}</mat-card-subtitle>
+      <mat-divider *ngIf="cardTitle || cardSubtitle"></mat-divider>
+      <ng-content></ng-content>
+    </mat-card>
+    <ng-content select="[kb-after-card]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<kb-dialog>
+  <kb-dialog-title *ngIf="title">
+    {{ title }}
+  </kb-dialog-title>
+  <kb-dialog-content>
+    <span class="kb-dialog-message">{{ message }}</span>
+  </kb-dialog-content>
+  <kb-dialog-actions>
+    <button mat-button color="accent" (click)="close()">{{ closeButton }}</button>
+  </kb-dialog-actions>
+</kb-dialog>

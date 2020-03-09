@@ -2,6 +2,14 @@
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
   "dest": "../../dist/core",
   "lib": {
-    "entryFile": "src/public-api.ts"
-  }
+    "entryFile": "src/public_api.ts",
+    "styleIncludePaths": ["../../styles"],
+    "umdModuleIds": {
+      "@core/layout": "core.layout",
+      "@core/dialogs": "core.dialogs",
+      "@core/notifications": "core.notifications",
+      "@core/sidesheet": "core.sidesheet"
+    }
+  },
+  "whitelistedNonPeerDependencies": ["."]
 }

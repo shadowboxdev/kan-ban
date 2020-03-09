@@ -1,0 +1,20 @@
+<div class="kb-layout-nav-wrapper">
+  <mat-toolbar class="kb-layout-toolbar" [color]="color">
+    <ng-content select="[kb-menu-button]"></ng-content>
+    <span
+      *ngIf="icon || logo || toolbarTitle"
+      [class.cursor-pointer]="routerEnabled"
+      (click)="handleNavigationClick()"
+      class="kb-layout-nav-toolbar-content"
+    >
+      <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+      <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+      <span *ngIf="toolbarTitle">{{ toolbarTitle }}</span>
+    </span>
+    <ng-content select="[kb-toolbar-content]"></ng-content>
+  </mat-toolbar>
+  <div class="kb-layout-nav-content" cdkScrollable>
+    <ng-content></ng-content>
+  </div>
+  <ng-content select="kb-layout-footer"></ng-content>
+</div>

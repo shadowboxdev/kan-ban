@@ -1,0 +1,8 @@
+{
+  "name": "@common/functions",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  }
+}

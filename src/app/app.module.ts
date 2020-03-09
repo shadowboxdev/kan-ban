@@ -11,6 +11,8 @@ import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+import { KbLayoutModule } from '@core/layout';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,6 +21,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    KbLayoutModule,
     StoreModule.forRoot(reducers, {
       metaReducers
     }),

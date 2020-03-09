@@ -2,17 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": []
+    "types": [],
+    "paths": {
+      "@core": ["dist/core/core", "dist/core"],
+      "@core/*": ["dist/core/lib/*", "dist/core/lib/*"],
+      "@common": ["dist/common/common", "dist/common", "dist/common/src/lib/common"],
+      "@common/*": ["dist/common/src/lib/*"],
+      "@store": ["projects/store/src/lib"]
+    }
   },
-  "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
-  ],
-  "include": [
-    "src/**/*.d.ts"
-  ],
-  "exclude": [
-    "src/test.ts",
-    "src/**/*.spec.ts"
-  ]
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.d.ts"],
+  "exclude": ["src/test.ts", "src/**/*.spec.ts"]
 }

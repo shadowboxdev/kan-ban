@@ -1,0 +1,8 @@
+{
+  "name": "@common/behviors",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "index.ts"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+<mat-toolbar
+  [color]="color"
+  [style.background-image]="backgroundImage"
+  [class.kb-toolbar-background]="!!isBackgroundAvailable"
+  class="kb-nagivation-drawer-toolbar"
+>
+  <ng-content select="[kb-navigation-drawer-toolbar]"></ng-content>
+  <ng-container *ngIf="!isCustomToolbar">
+    <div
+      *ngIf="icon || logo || sidenavTitle || avatar"
+      class="kb-navigation-drawer-toolbar-content"
+      [class.cursor-pointer]="routerEnabled"
+      (click)="handleNavigationClick()"
+    >
+      <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+      <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+      <img *ngIf="avatar && !logo && !icon" class="kb-nagivation-drawer-toolbar-avatar" [attr.src]="avatar" />
+      <span *ngIf="sidenavTitle" class="kb-navigation-drawer-title">{{ sidenavTitle }}</span>
+    </div>
+    <div class="kb-navigation-drawer-name" *ngIf="email && name">{{ name }}</div>
+    <div class="kb-navigation-drawer-menu-toggle" href *ngIf="email || name" (click)="toggleMenu()">
+      <span class="kb-navigation-drawer-label">{{ email || name }}</span>
+      <button mat-icon-button class="kb-navigation-drawer-menu-button" *ngIf="isMenuAvailable">
+        <mat-icon *ngIf="!menuToggled">arrow_drop_down</mat-icon>
+        <mat-icon *ngIf="menuToggled">arrow_drop_up</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+</mat-toolbar>
+<div class="kb-navigation-drawer-content" [@kbCollapse]="menuToggled">
+  <ng-content></ng-content>
+</div>
+<div class="kb-navigation-drawer-menu-content" [@kbCollapse]="!menuToggled">
+  <ng-content select="[kb-navigation-drawer-menu]"></ng-content>
+</div>

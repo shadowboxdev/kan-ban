@@ -1,0 +1,16 @@
+<div #content class="kb-notification-content">
+  <ng-content></ng-content>
+</div>
+<div
+  *ngIf="show"
+  class="kb-notification-count mat-{{ color }}"
+  [class.kb-notification-top]="positionY === 'top'"
+  [class.kb-notification-bottom]="positionY === 'bottom'"
+  [class.kb-notification-before]="positionX === 'before'"
+  [class.kb-notification-after]="positionX === 'after'"
+  [class.kb-notification-center-y]="positionY === 'center'"
+  [class.kb-notification-center-x]="positionX === 'center'"
+  [class.kb-notification-no-count]="noCount"
+>
+  {{ noCount ? '' : notificationsDisplay }}
+</div>

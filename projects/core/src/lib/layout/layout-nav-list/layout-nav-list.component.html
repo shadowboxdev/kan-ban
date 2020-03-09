@@ -1,0 +1,41 @@
+<div class="kb-layout-nav-list-wrapper">
+  <mat-sidenav-container fullscreen [autosize]="containerAutosize" class="kb-layout-nav-list">
+    <mat-sidenav
+      #sidenav
+      position="start"
+      [mode]="mode"
+      [opened]="opened"
+      [disableClose]="disableClose"
+      [style.max-width]="sidenavWidth"
+      [style.min-width]="sidenavWidth"
+    >
+      <mat-toolbar class="kb-layout-toolbar" [color]="color">
+        <ng-content select="[kb-menu-button]"></ng-content>
+        <span
+          *ngIf="icon || logo || toolbarTitle"
+          class="kb-layout-nav-list-toolbar-content"
+          [class.cursor-pointer]="routerEnabled"
+          (click)="handleNavigationClick()"
+        >
+          <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
+          <mat-icon *ngIf="logo && !icon" class="mat-icon-logo" [svgIcon]="logo"></mat-icon>
+          <span *ngIf="toolbarTitle">{{ toolbarTitle }}</span>
+        </span>
+        <ng-content select="[kb-sidenav-toolbar-content]"></ng-content>
+      </mat-toolbar>
+      <div class="kb-layout-nav-list-content" cdkScrollable>
+        <ng-content select="[kb-sidenav-content]"></ng-content>
+      </div>
+    </mat-sidenav>
+    <div class="kb-layout-nav-list-main">
+      <mat-toolbar class="kb-layout-toolbar" [color]="color">
+        <ng-content select="[kb-toolbar-content]"></ng-content>
+      </mat-toolbar>
+      <div class="kb-layout-nav-list-content" cdkScrollable>
+        <ng-content></ng-content>
+      </div>
+      <ng-content select="kb-layout-footer-inner"></ng-content>
+    </div>
+  </mat-sidenav-container>
+</div>
+<ng-content select="kb-layout-footer"></ng-content>

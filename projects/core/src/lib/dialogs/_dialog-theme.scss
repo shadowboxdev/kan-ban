@@ -1,0 +1,33 @@
+@import '../common/styles/theme-functions';
+@import '../common/styles/typography-functions';
+
+@mixin kb-dialog-typography($config) {
+  .kb-dialog-title {
+    font: {
+      family: kb-font-family($config);
+      size: kb-font-size($config, title);
+      weight: kb-font-weight($config, title);
+    }
+  }
+  .kb-dialog-message {
+    font: {
+      family: kb-font-family($config);
+      size: kb-font-size($config, subheading-2);
+      weight: kb-font-weight($config, subheading-2);
+    }
+
+    line-height: kb-line-height($config, subheading-2);
+  }
+}
+
+@mixin kb-dialog-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .kb-dialog-message {
+    color: mat-color($foreground, secondary-text);
+  }
+}
