@@ -3,7 +3,7 @@ const globals = require('jest-preset-angular/jest-preset').globals;
 module.exports = {
   preset: 'jest-preset-angular',
   globals,
-  reporters: [ "default", "jest-junit" ],
+  reporters: ['default', 'jest-junit'],
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
@@ -14,4 +14,8 @@ module.exports = {
     '^@lib/(.*)$': '<rootDir>/src/lib/$1',
   },
   setupFilesAfterEnv: ['<rootDir>/.config/testing/setup-jest.ts'],
+  transform: {
+    '^.+\\.(ts|html)$': 'ts-jest',
+    '^.+\\.js$': 'babel-jest',
+  },
 };

@@ -78,11 +78,5 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-sonarts": "^1.9.0",
     "typescript": "~3.7.5"
-  },
-  "jest": {
-    "preset": "jest-preset-angular",
-    "setupFilesAfterEnv": [
-      "<rootDir>/.config/testing/setup-jest.ts"
-    ]
   }
 }
