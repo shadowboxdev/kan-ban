@@ -1,0 +1,85 @@
+/* Position Mixin */
+@mixin position($positions...) {
+  $positions: parsePositions($positions);
+
+  $top: map-get($positions, 'top');
+  $right: map-get($positions, 'right');
+  $bottom: map-get($positions, 'bottom');
+  $left: map-get($positions, 'left');
+
+  @if $top {
+    top: $top;
+  }
+
+  @if $right {
+    right: $right;
+  }
+
+  @if $bottom {
+    bottom: $bottom;
+  }
+
+  @if $left {
+    left: $left;
+  }
+}
+
+@function parsePositions($directions) {
+  @if length($directions) == 1 {
+    $d1: nth($directions, 1);
+
+    $top: $d1;
+
+    @return (top: $top);
+  }
+
+  @if length($directions) == 2 {
+    $d1: nth($directions, 1);
+    $d2: nth($directions, 2);
+
+    $top: $d1;
+    $right: $d2;
+
+    @return (top: $top, right: $right);
+  }
+
+  @if length($directions) == 3 {
+    $d1: nth($directions, 1);
+    $d2: nth($directions, 2);
+    $d3: nth($directions, 3);
+
+    $top: $d1;
+    $right: $d2;
+    $bottom: $d3;
+
+    @return (top: $top, right: $right, bottom: $bottom);
+  }
+
+  @if length($directions) == 4 {
+    $d1: nth($directions, 1);
+    $d2: nth($directions, 2);
+    $d3: nth($directions, 3);
+    $d4: nth($directions, 4);
+
+    $top: $d1;
+    $right: $d2;
+    $bottom: $d3;
+    $left: $d4;
+
+    @return (top: $top, bottom: $bottom, left: $left, right: $right);
+  }
+}
+/* End Position Mixin */
+
+/* Opacity */
+// background
+@mixin bgc-opacity($hexcolor, $opacity) {
+  background-color: $hexcolor;
+  background-color: rgba($hexcolor, $opacity);
+}
+// color
+@mixin tc-opacity($hexcolor, $opacity) {
+  color: $hexcolor;
+  color: rgba($hexcolor, $opacity);
+}
+/* End Opacity */

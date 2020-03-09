@@ -1,0 +1,6 @@
+/dist
+/deploy
+/node_modules
+/coverage
+*.md
+src/app/content/**/*.html

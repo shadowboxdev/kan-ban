@@ -1,0 +1,7 @@
+@import 'colors-dark';
+@import 'colors-light';
+
+@mixin tsv-colors() {
+  @include tsv-colors-light();
+  @include tsv-colors-dark();
+}

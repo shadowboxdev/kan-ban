@@ -1,0 +1,35 @@
+$scrollbar: (
+  scrollbar-fg: #979494,
+  scrollbar-bg: #f2f2f2,
+  scrollbar-width: 6px,
+  scrollbar-thumb-radius: 2.5px
+);
+
+@mixin tsv-scrollbar-utilities() {
+  $fg: map-get($scrollbar, scrollbar-fg);
+  $bg: map-get($scrollbar, scrollbar-bg);
+  $size: map-get($scrollbar, scrollbar-width); 
+  $border-radius: $size / 2;
+
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $fg;
+    cursor: pointer;
+    border-radius: $border-radius;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $bg;
+  }
+
+  // TODO: remove
+  // For Internet Explorer
+  * {
+    scrollbar-face-color: $fg;
+    scrollbar-track-color: $bg;
+  }
+}

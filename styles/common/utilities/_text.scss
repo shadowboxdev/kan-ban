@@ -1,0 +1,168 @@
+@mixin text-indent() {
+  .indent {
+    text-indent: 16px;
+  }
+  .indent-xxl {
+    text-indent: 56px;
+  }
+  .indent-xl {
+    text-indent: 48px;
+  }
+  .indent-lg {
+    text-indent: 32px;
+  }
+  .indent-md {
+    text-indent: 24px;
+  }
+  .indent-sm {
+    text-indent: 8px;
+  }
+  .indent-xs {
+    text-indent: 4px;
+  }
+}
+
+@mixin font-weight() {
+  $weightsMap: (
+    thin: 100,
+    extra-light: 200,
+    ultra-light: 200,
+    light: 300,
+    normal: 400,
+    book: 400,
+    regular: 400,
+    medium: 500,
+    semi-bold: 600,
+    demi-bold: 600,
+    bold: 700,
+    extra-bold: 800,
+    ultra-bold: 900,
+    heavy: 900,
+    black: 900,
+    ultra: 900,
+    ultra-black: 900,
+    extra-ultra: 900
+  );
+  $weights: map-keys($weightsMap);
+
+  @each $weight in $weights {
+    $output: $weight;
+
+    @if map-has-key($weightsMap, $weight) {
+      $output: map-get($weightsMap, $weight);
+    }
+
+    .font-#{'' + $weight} {
+      font-weight: $output !important;
+    }
+  }
+}
+
+@mixin tsv-text-utilities() {
+  body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      & > small {
+        font-size: 60%;
+      }
+    }
+
+    .text-normal {
+      font-style: normal;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-left {
+      text-align: left;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .text-xs,
+    .text-sm,
+    .text-md,
+    .text-lg {
+      text-rendering: optimizeLegibility;
+    }
+
+    .text-micro {
+      font-size: 10px;
+      font-weight: normal;
+      letter-spacing: 1px;
+    }
+
+    .text-xs {
+      font-size: 50%;
+    }
+
+    .text-sm {
+      font-size: 70%;
+    }
+
+    .text-md {
+      font-size: 80%;
+    }
+
+    .text-lg {
+      font-size: 110%;
+    }
+
+    .text-xl {
+      font-size: 120%;
+    }
+
+    .text-xxl {
+      font-size: 130%;
+    }
+
+    .text-30 {
+      font-size: 30px;
+    }
+
+    .text-super {
+      font-size: 60px;
+    }
+
+    .text-wrap {
+      white-space: normal;
+    }
+
+    .text-break {
+      word-break: break-word;
+    }
+
+    .text-upper {
+      text-transform: uppercase;
+    }
+
+    .text-lower {
+      text-transform: lowercase;
+    }
+
+    .text-caps {
+      text-transform: capitalize;
+    }
+
+    .text-truncate {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .text-nodecoration {
+      text-decoration: none;
+    }
+
+    @include text-indent();
+    @include font-weight();
+  }
+}

@@ -1,0 +1,39 @@
+@mixin push($direction: '') {
+  .push-auto {
+    margin: auto !important;
+  }
+  .push#{$direction} {
+    margin#{$direction}: 16px !important;
+  }
+  .push#{$direction}-xxl {
+    margin#{$direction}: 56px !important;
+  }
+  .push#{$direction}-xl {
+    margin#{$direction}: 48px !important;
+  }
+  .push#{$direction}-lg {
+    margin#{$direction}: 32px !important;
+  }
+  .push#{$direction}-md {
+    margin#{$direction}: 24px !important;
+  }
+  .push#{$direction}-sm {
+    margin#{$direction}: 8px !important;
+  }
+  .push#{$direction}-xs {
+    margin#{$direction}: 4px !important;
+  }
+  .push#{$direction}-none {
+    margin#{$direction}: 0 !important;
+  }
+}
+
+@mixin tsv-pushing-utilities() {
+  body {
+    @include push();
+    @include push(-bottom);
+    @include push(-top);
+    @include push(-left);
+    @include push(-right);
+  }
+}

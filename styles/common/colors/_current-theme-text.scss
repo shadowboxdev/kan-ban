@@ -1,0 +1,35 @@
+@mixin current-theme-text-classes($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  body {
+    .text-primary {
+      color: mat-color($primary) !important;
+    }
+
+    .text-accent {
+      color: mat-color($accent, 500) !important;
+    }
+
+    .text-warn {
+      color: mat-color($warn) !important;
+    }
+
+    .bgc-primary {
+      background: mat-color($primary);
+    }
+
+    .bgc-primary-400 {
+      background: mat-color($primary, 400);
+    }
+
+    .bgc-accent {
+      background: mat-color($accent);
+    }
+
+    .bgc-warn {
+      background: mat-color($warn);
+    }
+  }
+}

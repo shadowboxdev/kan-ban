@@ -1,0 +1,90 @@
+@mixin tsv-general-utilities() {
+  body {
+    // Angular 4 added tabindex to everything, this style removes the outline:
+    [tabindex]:focus {
+      outline: none;
+    }
+
+    .radius-none {
+      border-radius: 0;
+    }
+
+    .overflow-hidden {
+      overflow: hidden;
+    }
+
+    .overflow-auto {
+      overflow: auto;
+    }
+
+    .overflow-visible {
+      overflow: visible;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .inline-block {
+      display: inline-block;
+    }
+
+    .absolute {
+      position: absolute;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    .fixed {
+      position: fixed;
+    }
+
+    .height-auto {
+      min-height: 0;
+    }
+
+    .z-3 {
+      z-index: 3;
+    }
+
+    .z-2 {
+      z-index: 2;
+    }
+
+    .z-1 {
+      z-index: 1;
+    }
+
+    .z-0 {
+      z-index: 0;
+    }
+
+    .no-select {
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+    }
+
+    .focus-weight:focus {
+      font-weight: 700;
+      outline: 0;
+    }
+
+    .cursor-pointer:hover {
+      cursor: pointer;
+    }
+
+    .cursor-not-allowed {
+      cursor: not-allowed;
+    }
+
+    .cursor-move {
+      cursor: move;
+    }
+  }
+}
