@@ -18,7 +18,7 @@
     "paths": {
       "@core": ["projects/core/src/lib"],
       "@core/*": ["projects/core/src/lib/*"],
-      "@common": ["projects/common/src/lib"],
+      "@common": ["projects/common/src/lib", "projects/common/src/public-api"],
       "@common/*": ["projects/common/src/lib/*"],
       "@store": ["projects/store/src/lib"]
     }

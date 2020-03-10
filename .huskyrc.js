@@ -1,5 +1,5 @@
 // @ts-check
-const { covalentHooks, generateHuskyConfig } = require('./.config/standards/husky/husky.js');
-const huskyHooks = generateHuskyConfig(covalentHooks());
+const { commitHooks, generateHuskyConfig } = require('./.config/standards/husky/husky.js');
+const huskyHooks = generateHuskyConfig(commitHooks());
 
 module.exports = huskyHooks;

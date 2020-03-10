@@ -1,8 +1,3 @@
-/*
- * Copyright (C) 2016-2017 by Teradata Corporation. All rights reserved.
- * TERADATA CORPORATION CONFIDENTIAL AND TRADE SECRET
- */
-
 import { Injectable } from '@angular/core';
 @Injectable()
 export class IconService {
@@ -1072,11 +1067,11 @@ export class IconService {
     'toggle_on',
   ];
 
-  get icons(): string[] {
+  public get icons(): string[] {
     return this._icons;
   }
 
-  filter(query: string): string[] {
+  public filter(query: string): string[] {
     return this.icons.filter((el: string) => {
       return el.toLowerCase().indexOf(query ? query.toLowerCase() : '') > -1;
     });

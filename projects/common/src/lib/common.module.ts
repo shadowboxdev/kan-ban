@@ -1,8 +1,9 @@
 import { Type } from '@angular/core';
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 /**
  * Directives
@@ -33,7 +34,7 @@ const KB_PIPES: Type<any>[] = [
   KbBytesPipe,
   KbDecimalBytesPipe,
   KbDigitsPipe,
-  KbTruncatePipe,
+  KbTruncatePipe
 ];
 
 /**
@@ -42,11 +43,12 @@ const KB_PIPES: Type<any>[] = [
 
 import { RouterPathService } from './services/router-path.service';
 import { IconService } from './services/icon.service';
+import { KbNotificationService } from './services/notifications.service';
 
 @NgModule({
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MatSnackBarModule],
   declarations: [...KB_DIRECTIVES, ...KB_PIPES, ...KB_VALIDATORS],
   exports: [FormsModule, CommonModule, ...KB_DIRECTIVES, ...KB_PIPES, ...KB_VALIDATORS],
-  providers: [RouterPathService, IconService],
+  providers: [RouterPathService, IconService, KbNotificationService]
 })
 export class KbCommonModule {}
